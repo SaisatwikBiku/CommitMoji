@@ -5,7 +5,7 @@ import './App.css'
 
 function App() {
     const emojis = ['😊', '😂', '😁', '😄', '😉', '😎', '😍', '🥰', '😑', '😣', '😴', '🤔', '😝', '🙃', '🤠', '🥺', '😲', '😨', '🤯', '😵']
-    const [emoji, setEmoji] = useState('😊');
+    const [emoji, setEmoji] = useState('😋');
     function generateEmojis() {
         // console.log(Math.random()*20)
         const newRandomNumber = Math.floor(Math.random() * emojis.length);
@@ -18,16 +18,62 @@ function App() {
 
     const cards = [
         {
-            emoji: "😎",
-            code: ":cool:",
-            desc: "For the time you make cool commits!"
+            emoji:"✨",
+            code: ":sparkles:",
+            desc: "Introduced new features."
         },
         {
-            emoji: "✨",
-            code: ":sparkles:",
-            desc: "For the time you make new features!"
-        }
+            emoji:"🚧",
+            code: ":construction:",
+            desc: "Work in progress."
+        },
+        {
+            emoji:"⚡",
+            code: ":zap:",
+            desc: "Performance optimization."
+        },
+        {
+            emoji:"🔥",
+            code: ":fire:",
+            desc: "Remove code or files."
+        },
+        {
+            emoji:"🐛",
+            code: ":bug:",
+            desc: "Fixed a bug."
+        },
+        {
+            emoji:"🚑",
+            code: ":ambulance:",
+            desc: "Critical hotfix."
+        },
+        {
+            emoji:"📝",
+            code: ":memo:",
+            desc: "Add or update documentation."
+        },
+        {
+            emoji:"🚀",
+            code: ":rocket:",
+            desc: "Deployment fix."
+        },
+        {
+            emoji:"🎨",
+            code: ":art:",
+            desc: "Styling fixes"
+        },
+        {
+            emoji:"🎉",
+            code: ":tada:",
+            desc: "begin a project!"
+        },
+        {
+            emoji:"✅",
+            code: ":white_check_mark:",
+            desc: "Add, update or passed tests"
+        },
     ]
+
     return (
         <div>
             <div className='flex justify-center content-center items-center my-20 flex-col '>
@@ -36,13 +82,13 @@ function App() {
             </div>
             {/* <SearchBar/> */}
             <div className='flex flex-wrap justify-center mx-20'>
-                <Card carditems={cards[0]} />
-                <Card carditems={cards[1]} />
-                <Card carditems={cards[0]} />
-                <Card carditems={cards[0]} />
-                <Card carditems={cards[0]} />
-                <Card carditems={cards[0]} />
-                <Card carditems={cards[0]} />
+                <Card carditems={cards[0]}/>
+                <Card carditems={cards[1]}/>
+                <Card carditems={cards[0]}/>
+                <Card carditems={cards[0]}/>
+                <Card carditems={cards[0]}/>
+                <Card carditems={cards[0]}/>
+                <Card carditems={cards[0]}/>
             </div>
         </div>
     )
