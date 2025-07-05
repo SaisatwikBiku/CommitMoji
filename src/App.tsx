@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, type JSX } from 'react'
 import Card from './components/Card'
 // import SearchBar from './components/SearchBar'
 import './App.css'
@@ -74,6 +74,15 @@ function App() {
         },
     ]
 
+    function renderCards(): JSX.Element  {
+        return <>
+            {
+                cards.map((c,i)=> {
+                    <Card carditems={c} key={i}/>
+                })
+            }
+        </>
+    }
     return (
         <div>
             <div className='flex justify-center content-center items-center my-20 flex-col '>
@@ -82,13 +91,7 @@ function App() {
             </div>
             {/* <SearchBar/> */}
             <div className='flex flex-wrap justify-center mx-20'>
-                <Card carditems={cards[0]}/>
-                <Card carditems={cards[1]}/>
-                <Card carditems={cards[0]}/>
-                <Card carditems={cards[0]}/>
-                <Card carditems={cards[0]}/>
-                <Card carditems={cards[0]}/>
-                <Card carditems={cards[0]}/>
+                {renderCards() }
             </div>
         </div>
     )
