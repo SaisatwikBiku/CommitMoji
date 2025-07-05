@@ -18,68 +18,68 @@ function App() {
 
     const cards = [
         {
-            emoji:"✨",
+            emoji: "✨",
             code: ":sparkles:",
             desc: "Introduced new features."
         },
         {
-            emoji:"🚧",
+            emoji: "🚧",
             code: ":construction:",
             desc: "Work in progress."
         },
         {
-            emoji:"⚡",
+            emoji: "⚡",
             code: ":zap:",
             desc: "Performance optimization."
         },
         {
-            emoji:"🔥",
+            emoji: "🔥",
             code: ":fire:",
             desc: "Remove code or files."
         },
         {
-            emoji:"🐛",
+            emoji: "🐛",
             code: ":bug:",
             desc: "Fixed a bug."
         },
         {
-            emoji:"🚑",
+            emoji: "🚑",
             code: ":ambulance:",
             desc: "Critical hotfix."
         },
         {
-            emoji:"📝",
+            emoji: "📝",
             code: ":memo:",
             desc: "Add or update documentation."
         },
         {
-            emoji:"🚀",
+            emoji: "🚀",
             code: ":rocket:",
             desc: "Deployment fix."
         },
         {
-            emoji:"🎨",
+            emoji: "🎨",
             code: ":art:",
             desc: "Styling fixes"
         },
         {
-            emoji:"🎉",
+            emoji: "🎉",
             code: ":tada:",
             desc: "begin a project!"
         },
         {
-            emoji:"✅",
+            emoji: "✅",
             code: ":white_check_mark:",
             desc: "Add, update or passed tests"
         },
     ]
 
-    function renderCards(): JSX.Element  {
+    function renderCards(): JSX.Element {
         return <>
             {
-                cards.map((c,i)=> {
-                    <Card carditems={c} key={i}/>
-                })
+                cards.map((c, i) => (
+                    <Card carditems={c} key={i} />
+                ))
             }
         </>
     }
@@ -91,7 +91,7 @@ function App() {
             </div>
             {/* <SearchBar/> */}
             <div className='flex flex-wrap justify-center mx-20'>
-                {renderCards() }
+                {renderCards()}
             </div>
         </div>
     )
