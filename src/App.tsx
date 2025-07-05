@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Card from './components/Card'
+import SearchBar from './components/SearchBar'
 import './App.css'
 
 function App() {
@@ -17,10 +18,24 @@ function App() {
     return (
         <div>
             <div className='flex justify-center content-center items-center my-20 flex-col '>
-                <h1 className='text-8xl font-medium my-5'>CommitM<span>{emoji}</span>ji</h1>
-                <h2>Make your commits clearer, smarter, and more expressive.</h2>
+                <h1 className='text-8xl font-medium my-5'>CommitM<span className='text-7xl'>{emoji}</span>ji</h1>
+                <div>Make your commits clearer, smarter, and more expressive!</div>
             </div>
-            <div>
+            <SearchBar/>
+            <div className='flex flex-wrap justify-center'>
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
                 <Card />
             </div>
         </div>

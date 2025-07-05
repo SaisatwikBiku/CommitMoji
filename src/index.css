@@ -2,6 +2,10 @@
 
 :root {
   font-family: "Montserrat", system-ui, Avenir, Helvetica, Arial, sans-serif;
-  color: rgba(255, 255, 255, 0.87);
+  color: #ffffff;
   background-color: #242424;
+}
+
+input::placeholder {
+  color: #989898;
 }
