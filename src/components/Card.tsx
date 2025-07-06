@@ -8,7 +8,7 @@ interface cardProps {
 
 const Card: React.FC<cardProps> = ({carditems}) => {
     return (
-        <div className='card-container w-[16rem] h-[20rem] my-7 mx-5 p-5 flex items-center justify-center flex-col rounded-md'>
+        <div className='card-container w-[16rem] h-[20rem] flex items-center justify-center flex-col rounded-md'>
             <div className='text-[6rem] cursor-pointer emoji'>{carditems.emoji}</div>
             <div className='text-center'>
                 <div className='text-[20px] font-bold cursor-pointer card-code'>{carditems.code}</div>

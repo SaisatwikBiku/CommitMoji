@@ -1,6 +1,8 @@
 .card-container {
     background-color: #2c2c2c;
     transition: background-color,transform ease 300ms;
+    margin: 1.4rem;
+    padding: 20px;
 }
 
 .card-container:hover {
@@ -11,7 +13,9 @@
 .card-container:hover .card-code {
     text-decoration: underline;
 }
-
+.card-code {
+    width: 100%;
+}
 .emoji{
     font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols;
 }
