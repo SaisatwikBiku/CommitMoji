@@ -1,6 +1,6 @@
 .card-container {
     background-color: #2c2c2c;
-    transition: background-color,transform ease 300ms;
+    transition: all ease 300ms;
     margin: 1.4rem;
     padding: 20px;
 }

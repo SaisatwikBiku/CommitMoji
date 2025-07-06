@@ -1,6 +1,6 @@
 import React, { useEffect, useState, type JSX } from 'react'
 import Card from './components/Card'
-// import SearchBar from './components/SearchBar'
+import Foot from './components/Foot'
 import './App.css'
 
 function App() {
@@ -214,6 +214,7 @@ function App() {
             <div className='flex flex-wrap justify-center mx-20'>
                 {renderCards()}
             </div>
+            <Foot/>
         </div>
     )
 }
