@@ -1,20 +1,24 @@
 import React, { useEffect, useState, type JSX } from 'react'
 import Card from './components/Card'
 import Foot from './components/Foot'
+import Notify from './components/Notify'
 import './App.css'
 
 function App() {
-    const emojis = ['😊', '😂', '😁', '😄', '😉', '😎', '😍', '🥰', '😑', '😣', '😴', '🤔', '😝', '🙃', '🤠', '🥺', '😲', '😨', '🤯', '😵']
+    const [visible, setVisibility] = useState(0)
     const [emoji, setEmoji] = useState('😋');
+
+    const emojis = ['😊', '😂', '😁', '😄', '😉', '😎', '😍', '🥰', '😑', '😣', '😴', '🤔', '😝', '🙃', '🤠', '🥺', '😲', '😨', '🤯', '😵']
+    
     function generateEmojis() {
         // console.log(Math.random()*20)
         const newRandomNumber = Math.floor(Math.random() * emojis.length);
         setEmoji(emojis[newRandomNumber]);
     }
     useEffect(() => {
-        const intervalId = setInterval(generateEmojis, 5000);
+        const intervalId = setInterval(generateEmojis, 1000);
         return () => clearInterval(intervalId); // Clean up on unmount
-    }, []);
+    }, [emoji]);
 
     const cards = [
         {
@@ -194,12 +198,22 @@ function App() {
         },
         
     ]
+    function copyText(text) {
+        navigator.clipboard.writeText(text);
+        setVisibility(1)
+        setTimeout(() => {
+            setVisibility(0)
+        }, 3000);
+        console.log("text copied to clipboard!")
+    }
 
     function renderCards(): JSX.Element {
         return <>
             {
                 cards.map((c, i) => (
-                    <Card carditems={c} key={i} />
+                    <div onClick={() => copyText(c.code)} key={i}>
+                        <Card carditems={c} key={i} />
+                    </div>
                 ))
             }
         </>
@@ -215,6 +229,7 @@ function App() {
                 {renderCards()}
             </div>
             <Foot/>
+            <Notify visibility={visible}/>
         </div>
     )
 }
