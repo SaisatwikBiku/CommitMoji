@@ -8,6 +8,7 @@ import SearchBar from './components/SearchBar'
 function App() {
     const [visible, setVisibility] = useState(0)
     const [emoji, setEmoji] = useState('😋');
+    const [copiedEmoji, setCopiedEmoji] = useState('');
 
     const emojis = ['😊', '😂', '😁', '😄', '😉', '😎', '😍', '🥰', '😑', '😣', '😴', '🤔', '😝', '🙃', '🤠', '🥺', '😲', '😨', '🤯', '😵']
     // const emojis = [1,2,3,4,5,6,7,8,9,0]
@@ -200,20 +201,21 @@ function App() {
         },
         
     ]
-    function copyText(text) {
+    function copyText(text, emoji) {
         navigator.clipboard.writeText(text);
         setVisibility(1)
+        setCopiedEmoji(emoji);
         setTimeout(() => {
             setVisibility(0)
         }, 3000);
-        console.log("text copied to clipboard!")
+        console.log("text copied to clipboard!", emoji)
     }
 
     function renderCards(): JSX.Element {
         return <>
             {
                 cards.map((c, i) => (
-                    <div onClick={() => copyText(c.code)} key={i}>
+                    <div onClick={() => copyText(c.code, c.emoji)} key={i}>
                         <Card carditems={c} />
                     </div>
                 ))
@@ -231,7 +233,7 @@ function App() {
                 {renderCards()}
             </div>
             <Foot/>
-            <Notify visibility={visible}/>
+            <Notify visibility={visible} emoji={copiedEmoji}/>
         </div>
     )
 }
