@@ -3,22 +3,24 @@ import Card from './components/Card'
 import Foot from './components/Foot'
 import Notify from './components/Notify'
 import './App.css'
+import SearchBar from './components/SearchBar'
 
 function App() {
     const [visible, setVisibility] = useState(0)
     const [emoji, setEmoji] = useState('😋');
 
     const emojis = ['😊', '😂', '😁', '😄', '😉', '😎', '😍', '🥰', '😑', '😣', '😴', '🤔', '😝', '🙃', '🤠', '🥺', '😲', '😨', '🤯', '😵']
+    // const emojis = [1,2,3,4,5,6,7,8,9,0]
     
     function generateEmojis() {
-        // console.log(Math.random()*20)
         const newRandomNumber = Math.floor(Math.random() * emojis.length);
         setEmoji(emojis[newRandomNumber]);
     }
     useEffect(() => {
         const intervalId = setInterval(generateEmojis, 1000);
-        return () => clearInterval(intervalId); // Clean up on unmount
-    }, [emoji]);
+        return () => clearInterval(intervalId); 
+        // Clean up on unmount
+    }, []);
 
     const cards = [
         {
@@ -212,7 +214,7 @@ function App() {
             {
                 cards.map((c, i) => (
                     <div onClick={() => copyText(c.code)} key={i}>
-                        <Card carditems={c} key={i} />
+                        <Card carditems={c} />
                     </div>
                 ))
             }
@@ -224,7 +226,7 @@ function App() {
                 <h1 className='text-8xl font-medium my-5'>CommitM<span className='text-7xl'>{emoji}</span>ji</h1>
                 <div>Make your commits clearer, smarter, and more expressive!</div>
             </div>
-            {/* <SearchBar/> */}
+            <SearchBar/>
             <div className='flex flex-wrap justify-center mx-20'>
                 {renderCards()}
             </div>
