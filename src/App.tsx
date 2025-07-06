@@ -3,7 +3,7 @@ import Card from './components/Card'
 import Foot from './components/Foot'
 import Notify from './components/Notify'
 import './App.css'
-import SearchBar from './components/SearchBar'
+// import SearchBar from './components/SearchBar'
 
 function App() {
     const [visible, setVisibility] = useState(0)
@@ -228,7 +228,7 @@ function App() {
                 <h1 className='text-8xl font-medium my-5'>CommitM<span className='text-7xl'>{emoji}</span>ji</h1>
                 <div>Make your commits clearer, smarter, and more expressive!</div>
             </div>
-            <SearchBar/>
+            {/* <SearchBar/> */}
             <div className='flex flex-wrap justify-center mx-20'>
                 {renderCards()}
             </div>
