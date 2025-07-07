@@ -2,13 +2,15 @@ import React, { useEffect, useState, type JSX } from 'react'
 import Card from './components/Card'
 import Foot from './components/Foot'
 import Notify from './components/Notify'
+import SearchBar from './components/SearchBar'
 import './App.css'
-// import SearchBar from './components/SearchBar'
+
 
 function App() {
     const [visible, setVisibility] = useState(0)
     const [emoji, setEmoji] = useState('😋');
     const [copiedEmoji, setCopiedEmoji] = useState('');
+    const [search, setSearch] = useState('');
 
     const emojis = ['😊', '😂', '😁', '😄', '😉', '😎', '😍', '🥰', '😑', '😣', '😴', '🤔', '😝', '🙃', '🤠', '🥺', '😲', '😨', '🤯', '😵']
     // const emojis = [1,2,3,4,5,6,7,8,9,0]
@@ -211,16 +213,30 @@ function App() {
         console.log("text copied to clipboard!", emoji)
     }
 
+    const filteredCards = cards.filter(c =>
+        c.emoji.includes(search) ||
+        c.code.toLowerCase().includes(search.toLowerCase()) ||
+        c.desc.toLowerCase().includes(search.toLowerCase())
+    );
+
     function renderCards(): JSX.Element {
-        return <>
-            {
-                cards.map((c, i) => (
+        if (filteredCards.length === 0) {
+            return (
+                <div className="flex flex-col items-center justify-center w-full my-16">
+                    <span className="text-7xl mb-4">😢</span>
+                    <span className="text-lg text-gray-500">No emojis found</span>
+                </div>
+            );
+        }
+        return (
+            <>
+                {filteredCards.map((c, i) => (
                     <div onClick={() => copyText(c.code, c.emoji)} key={i}>
                         <Card carditems={c} />
                     </div>
-                ))
-            }
-        </>
+                ))}
+            </>
+        );
     }
     return (
         <div>
@@ -228,7 +244,7 @@ function App() {
                 <h1 className='text-8xl font-medium my-5'>CommitM<span className='text-7xl'>{emoji}</span>ji</h1>
                 <div>Make your commits clearer, smarter, and more expressive!</div>
             </div>
-            {/* <SearchBar/> */}
+            <SearchBar value={search} onChange={e => setSearch(e.target.value)} />
             <div className='flex flex-wrap justify-center mx-20'>
                 {renderCards()}
             </div>
