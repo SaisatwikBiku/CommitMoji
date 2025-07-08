@@ -1,4 +1,4 @@
-import React, { useEffect, useState, type JSX } from 'react'
+import { useEffect, useState, type JSX } from 'react'
 import Card from './components/Card'
 import Foot from './components/Foot'
 import Notify from './components/Notify'
