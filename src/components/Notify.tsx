@@ -11,9 +11,9 @@ const Notify: React.FC<NotifyProps> = ({ visibility, emoji }) => {
             style={{
                 opacity: visibility,
                 transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
-                transform: visibility ? 'translateY(0)' : 'translateY(-20px)',
+                transform: visibility ? 'translateY(0)' : 'translateY(-50px)',
             }}
-            className='fixed top-5 right-5 border-4 rounded-md card-container border-amber-400 bg-gray-600 backdrop-blur-md  text-white px-4 py-2 shadow-lg flex items-center'
+            className='fixed top-5 right-5 border-4 rounded-md border-amber-400 bg-gray-600 backdrop-blur-md  text-white px-6 py-2 shadow-lg flex items-center'
         >
             Copied to clipboard {emoji}
         </div>
