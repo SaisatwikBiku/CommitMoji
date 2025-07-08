@@ -201,7 +201,7 @@ function App() {
         },
         
     ]
-    function copyText(text, emoji) {
+    function copyText(text:string, emoji:string) {
         navigator.clipboard.writeText(text);
         setVisibility(1)
         setCopiedEmoji(emoji);
