@@ -69,6 +69,11 @@ function App() {
         {
             emoji: "🎨",
             code: ":art:",
+            desc: "Adding styles"
+        },
+        {
+            emoji: "💄",
+            code: ":lipstick:",
             desc: "Styling fixes"
         },
         {
@@ -201,7 +206,41 @@ function App() {
             code: ":bulb:",
             desc: "Add/Updated comments in source code."
         },
-        
+        {
+            emoji: "🗃️",
+            code: ":card_file_box:",
+            desc: "Perform database related changes."
+        },
+        {
+            emoji: "🏗️",
+            code: ":building_construction:",
+            desc: "Made structural changes."
+        },
+        {
+            emoji: "📱",
+            code: ":iphone:",
+            desc: "Worked on responsive design."
+        },
+        {
+            emoji: "🙈",
+            code: ":see_no_evil:",
+            desc: "Add or update .gitignore file."
+        },
+        {
+            emoji: "⚗️",
+            code: ":alembic:",
+            desc: "Experimental changes."
+        },
+        {
+            emoji: "🔍️",
+            code: ":mag:",
+            desc: "Improved search engine optimization."
+        },
+        {
+            emoji: "🗑️",
+            code: ":wastebasket:",
+            desc: "Code cleanup."
+        },
     ]
     function copyText(text:string, emoji:string) {
         navigator.clipboard.writeText(text);
