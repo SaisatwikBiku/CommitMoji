@@ -10,6 +10,8 @@ Make every commit count — with clarity and flair. 🚀
 
 ## Made with ReactJS and TailwindCSS, powered by VITE⚡
 
+![Screenshot](Screenshot.png)
+
 🔹 Browse a curated list of common Git emojis
 
 🔹 Get usage examples for each emoji
@@ -34,7 +36,7 @@ Download, unzip and open the folder in your text editor.
 ```
 3. Open localhost in your brower and Done!
 
-## Dependencies -
+### Dependencies -
 1. tailwindCSS v4.1.11
 1. react v19.1.0
 1. react-dom v19.1.0
